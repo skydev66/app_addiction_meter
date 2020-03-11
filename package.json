@@ -1,0 +1,32 @@
+{
+    "name": "my_appstore",
+    "version": "1.0.0",
+    "description": "AppStore",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "client": "cd client && yarn start",
+        "server": "nodemon server.js",
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "dev:server": "cd client && yarn build && cd .. && yarn start",
+        "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "nodemailer": "^6.4.1"
+    },
+    "devDependencies": {
+        "concurrently": "^4.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/risingdeveloper007/app-addiction-meter.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/risingdeveloper007/app-addiction-meter/issues"
+    },
+    "homepage": "https://github.com/risingdeveloper007/app-addiction-meter#readme"
+}
